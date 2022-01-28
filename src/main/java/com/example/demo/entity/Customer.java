@@ -27,6 +27,15 @@ class Customer {
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="account_id", referencedColumnName = "id")
 	Account account;
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="withdraw_id", referencedColumnName = "id")
+	Withdraw withdraw;
+	public Withdraw getWithdraw() {
+		return withdraw;
+	}
+	public void setWithdraw(Withdraw withdraw) {
+		this.withdraw = withdraw;
+	}
 	public Account getAccount() {
 		return account;
 	}
