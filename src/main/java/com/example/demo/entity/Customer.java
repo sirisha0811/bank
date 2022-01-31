@@ -30,6 +30,16 @@ class Customer {
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="withdraw_id", referencedColumnName = "id")
 	Withdraw withdraw;
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="balanceenquiry_id", referencedColumnName = "id")
+	BalanceEnquiry balanceenquiry;
+	
+	public BalanceEnquiry getBalanceenquiry() {
+		return balanceenquiry;
+	}
+	public void setBalanceenquiry(BalanceEnquiry balanceenquiry) {
+		this.balanceenquiry = balanceenquiry;
+	}
 	public Withdraw getWithdraw() {
 		return withdraw;
 	}
